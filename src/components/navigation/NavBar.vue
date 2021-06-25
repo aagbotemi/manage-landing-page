@@ -61,46 +61,5 @@ ul {
   //z-index: 10;
   width: 22rem !important;
 }
-.v-btn {
-  // z-index: 10000 !important;
-}
-/*.v-app-bar {
-  background-color: white !important;
-  border-bottom: 1px solid #C3CBD6 !important;
-
-  .v-text-field-slot {
-    //height: 30px;
-  }
-}
-
-.fund-account {
-  background: #00B388 0% 0% no-repeat padding-box;
-  border: 1px solid #00B388;
-  border-radius: 7px;
-  color: #FFFFFF;
-
-  &:focus {
-    outline: none;
-  }
-}
-
-.no-background-hover::before {
-  background-color: transparent !important;
-}
-#height {
-  max-height: 20px !important;
-}
-.v-btn--fab.v-size--small {
-  height: 30px;
-  width: 30px;
-  box-shadow: 0px 5px 30px #C3CBD6;
-
-  background: red !important;
-
-  &:hover, &:focus {
-    background: transparent !important;
-  }
-
-}*/
 
 </style>

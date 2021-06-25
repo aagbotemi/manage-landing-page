@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <nav-bar :sidebar="sidebar" />
+    <sidebar :sidebar="sidebar" />
     <v-main>
       <router-view/>
     </v-main>
@@ -10,10 +11,12 @@
 <script lang="ts">
 import Vue from 'vue'
 import NavBar from '@/components/navigation/NavBar.vue'
+import Sidebar from '@/components/navigation/Sidebar.vue'
 
 export default Vue.extend({
   name: 'App',
   components: {
+    Sidebar,
     NavBar
   },
   data: () => ({
