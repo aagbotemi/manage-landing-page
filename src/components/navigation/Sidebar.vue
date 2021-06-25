@@ -58,6 +58,9 @@ ul {
     }
   }
 }
+.v-navigation-drawer {
+  background-color: rgba(242, 95, 58, 0.7) !important;
+}
 .close-icon {
   background-color: hsl(12, 88%, 59%);
   border-radius: 50%;
