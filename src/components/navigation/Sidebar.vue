@@ -2,9 +2,8 @@
     <v-navigation-drawer temporary
                          v-model="sidebar.drawer" app width="221" id="side-bar"
                          :mobile-breakpoint="$vuetify.breakpoint.thresholds.sm"
-                         style="position: relative"
     >
-      <v-icon class="close-icon pa-1" color="#fff" @click="sidebar.drawer = !sidebar.drawer">mdi-close</v-icon>
+      <v-icon class="close-icon pa-1" color="#fff" @click="sidebar.drawer = !sidebar.drawer">{{ icons.close }}</v-icon>
       <div class="d-flex flex-column" style="min-height: 100vh">
 
         <ul class="mt-9">
@@ -13,7 +12,7 @@
             <router-link class="text-decoration-none" :to="item.url">{{ item.title }}</router-link>
           </li>
           <li>
-            <v-btn style="width: 150px" rounded color="hsl(12, 88%, 59%)" class="d-none d-sm-flex white--text text-capitalize">Get Started</v-btn>
+            <v-btn style="width: 150px" rounded color="hsl(12, 88%, 59%)" class="d-none d-sm-flex white&#45;&#45;text text-capitalize">Get Started</v-btn>
           </li>
         </ul>
         <div class="mb-4 mx-auto mt-auto">
@@ -25,6 +24,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import icons from '@/utils/icons'
 
 export default Vue.extend({
   name: 'sidebar' as string,
@@ -32,6 +32,7 @@ export default Vue.extend({
     sidebar: Object as () => { drawer: boolean }
   },
   data: () => ({
+    icons,
     menuItems: [
       { title: 'Pricing', url: '/' },
       { title: 'Product', url: '/' },

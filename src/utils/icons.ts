@@ -1,4 +1,3 @@
-// @ts-ignore
 import {
   mdiClose,
   mdiMenu,
@@ -11,7 +10,7 @@ import {
   mdiFacebook,
   mdiPinterest,
   mdiYoutube
-} from '@mdi/js';
+} from '@mdi/js'
 
 const icons = {
   close: mdiClose,
@@ -25,6 +24,6 @@ const icons = {
   facebook: mdiFacebook,
   pinterest: mdiPinterest,
   youtube: mdiYoutube
-};
+}
 
-export default icons;
+export default icons

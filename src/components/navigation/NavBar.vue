@@ -12,8 +12,8 @@
         </li>
       </ul>
       <v-spacer class="d-none d-sm-flex" />
-      <!--      <img src="../../../public/images/bg-tablet-pattern.svg" class="tablet-img-top" alt="tablet pattern image">-->
-      <v-btn rounded color="hsl(12, 88%, 59%)" class="d-none d-sm-flex white--text text-capitalize">Get Started</v-btn>
+      <!--<img src="../../../public/images/bg-tablet-pattern.svg" class="tablet-img-top" alt="tablet pattern image">-->
+      <v-btn rounded color="hsl(12, 88%, 59%)" class="d-none d-sm-flex white&#45;&#45;text text-capitalize">Get Started</v-btn>
     </v-container>
   </v-app-bar>
 </template>
