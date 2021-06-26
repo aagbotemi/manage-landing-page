@@ -1,5 +1,4 @@
 <template>
-
     <v-navigation-drawer temporary
                          v-model="sidebar.drawer" app width="221" id="side-bar"
                          :mobile-breakpoint="$vuetify.breakpoint.thresholds.sm"
@@ -57,9 +56,6 @@ ul {
        color: var(--clr-grayish-blue);
     }
   }
-}
-.v-navigation-drawer {
-  background-color: rgba(242, 95, 58, 0.7) !important;
 }
 .close-icon {
   background-color: hsl(12, 88%, 59%);
