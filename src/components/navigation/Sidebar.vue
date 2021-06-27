@@ -12,7 +12,7 @@
             <router-link class="text-decoration-none" :to="item.url">{{ item.title }}</router-link>
           </li>
           <li>
-            <v-btn style="width: 150px" rounded color="hsl(12, 88%, 59%)" class="d-none d-sm-flex white&#45;&#45;text text-capitalize">Get Started</v-btn>
+            <v-btn style="width: 150px" rounded color="hsl(12, 88%, 59%)" class="d-none d-sm-flex white--text text-capitalize">Get Started</v-btn>
           </li>
         </ul>
         <div class="mb-4 mx-auto mt-auto">
