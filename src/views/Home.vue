@@ -187,6 +187,13 @@
       </div>
     </div>
 
+    <div class="bottom-jumbotron mt-16">
+      <v-container class="d-sm-flex text-center text-sm-left py-16">
+        <h1>Simplify how your team <br /> works today.</h1>
+        <v-spacer />
+        <v-btn rounded color="white" class="white deep-orange--text text--accent-2 text-capitalize mt-8 mt-sm-0">Get Started</v-btn>
+      </v-container>
+    </div>
   </div>
 </template>
 
@@ -250,23 +257,6 @@ export default Vue.extend({
     width: 22rem;
   }
 }
-@media only screen and (min-width: 600px) {
-  .jumbotron{
-    .jumbotron-image {
-      width: 30rem;
-    }
-    h1 {
-      font-size: 50px;
-    }
-  }
-  /*.bottom-jumbotron {
-    background-image: linear-gradient(
-        rgb(242, 95, 98),
-        rgb(242, 95, 98)
-    ),
-    url("./../manage-landing-page/public/images/bg-simplify-section-desktop.svg");
-  }*/
-}
 .manage-peculiarity {
   span {
     background-color: var(--clr-bright-red);
@@ -286,6 +276,26 @@ export default Vue.extend({
     img {
       width: 3.3rem;
     }
+  }
+}
+.bottom-jumbotron {
+  background: url("../../public/images/bg-simplify-section-mobile.svg"), var(--clr-bright-red);
+  h1 {
+    color: var(--clr-very-light-gray);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .jumbotron{
+    .jumbotron-image {
+      width: 30rem;
+    }
+    h1 {
+      font-size: 50px;
+    }
+  }
+  .bottom-jumbotron {
+    background: url('../../public/images/bg-simplify-section-desktop.svg'), var(--clr-bright-red)
   }
 }
 </style>
