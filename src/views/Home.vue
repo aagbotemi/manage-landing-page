@@ -194,6 +194,91 @@
         <v-btn rounded color="white" class="white deep-orange--text text--accent-2 text-capitalize mt-8 mt-sm-0">Get Started</v-btn>
       </v-container>
     </div>
+    <footer class="py-10">
+      <v-container>
+        <v-row>
+
+          <v-col order-md="4" md="4" cols="12">
+            <v-form ref="form" class="d-flex" @submit.prevent="submitEmail"
+                    v-model="valid">
+              <v-text-field v-model="email"
+                            :rules="emailRules" background-color="white" rounded dense hide-details="auto" outlined placeholder="Updates in your inbox" />
+              <v-btn rounded color="hsl(12, 88%, 59%)" class="white--text text-capitalize ml-2">Go</v-btn>
+            </v-form>
+          </v-col>
+          <v-col order-md="2" md="2" cols="6">
+            <ul class="ml-n6">
+              <li class="mb-1">
+                <router-link class="text-decoration-none" to="/">
+                  Home
+                </router-link>
+              </li>
+              <li class="mb-1">
+                <router-link class="text-decoration-none" to="/">
+                  Pricing
+                </router-link>
+              </li>
+              <li class="mb-1">
+                <router-link class="text-decoration-none" to="/">
+                  Products
+                </router-link>
+              </li>
+              <li class="mb-1">
+                <router-link class="text-decoration-none" to="/">
+                  About Us
+                </router-link>
+              </li>
+            </ul>
+          </v-col>
+          <v-col order-md="3" md="3" cols="6">
+            <ul class="ml-n6">
+              <li class="mb-1">
+                <router-link class="text-decoration-none" to="/">
+                  Careers
+                </router-link>
+              </li>
+              <li class="mb-1">
+                <router-link class="text-decoration-none" to="/">
+                  Community
+                </router-link>
+              </li>
+              <li class="mb-1">
+                <router-link class="text-decoration-none" to="/">
+                  Privacy Policy
+                </router-link>
+              </li>
+            </ul>
+          </v-col>
+          <v-col class="text-center text-md-left" order-md="1" md="3" cols="12">
+            <div>
+              <img src="/images/logo.svg">
+              <div class="mt-7 mt-md-12">
+                <a class="mr-4" href="#"
+                ><v-icon medium>{{ icons.facebook }}</v-icon></a
+                >
+                <a class="mr-4" href="#"
+                ><v-icon medium>{{ icons.youtube }}</v-icon></a
+                >
+                <a class="mr-4" href="#"
+                ><v-icon medium>{{ icons.twitter }}</v-icon></a
+                >
+                <a class="mr-4" href="#"
+                ><v-icon medium>{{ icons.pinterest }}</v-icon></a
+                >
+                <a class="mr-4" href="#"
+                ><v-icon medium>{{ icons.instagram }}</v-icon></a
+                >
+              </div>
+            </div>
+          </v-col>
+
+        </v-row>
+
+        <div class="text-right mt-10 mt-md-3">
+          <span >Copyright 2021. All Rights Reserved.</span>
+        </div>
+      </v-container>
+    </footer>
   </div>
 </template>
 
@@ -203,6 +288,7 @@ import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import icons from '@/utils/icons'
 
 export default Vue.extend({
   name: 'Home',
@@ -210,6 +296,14 @@ export default Vue.extend({
     VueSlickCarousel
   },
   data: () => ({
+    icons,
+    emailArray: [] as Array<any>,
+    valid: true,
+    email: '',
+    emailRules: [
+      (email: any) => !!email || 'E-mail is required',
+      (email: any) => /.+@.+\..+/.test(email) || 'E-mail must be valid'
+    ],
     settings: {
       arrows: false as boolean,
       dots: false as boolean,
@@ -236,7 +330,26 @@ export default Vue.extend({
       dotsClass: 'slick-dots' as string,
       edgeFriction: 0.35 as number
     }
-  })
+  }),
+  methods: {
+    /* validate () {
+      this.$refs.form.validate()
+    }, */
+    reset () {
+      this.$refs.form.reset()
+    },
+    /* resetValidation () {
+
+    }, */
+    submitEmail () {
+      // this.$refs.form.reset()
+      /* this.$refs.form.resetValidation(); */
+      this.reset()
+      alert('Email submitted successfully!')
+
+      this.email = ''
+    }
+  }
 })
 </script>
 
@@ -284,7 +397,28 @@ export default Vue.extend({
     color: var(--clr-very-light-gray);
   }
 }
+footer {
+  background: var(--clr-very-dark-blue);
+  color: var(--clr-very-light-gray);
 
+  img {
+    filter: brightness(0.9) invert(0.99);
+  }
+
+  a {
+    .v-icon {
+      filter: brightness(1) invert(1);
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li a{
+      color: var(--clr-very-light-gray) !important;
+    }
+  }
+}
 @media only screen and (min-width: 600px) {
   .jumbotron{
     .jumbotron-image {
