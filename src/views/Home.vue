@@ -67,14 +67,169 @@
       </v-row>
     </v-container>
 
+    <div class="testimonial mt-10">
+      <h2 class="mb-5 text-center">What they've said</h2>
+      <div>
+        <VueSlickCarousel class="d-none d-sm-block" v-bind="settings">
+          <div class="pt-5 px-3">
+            <v-card class="card mb-8 mt-md-6 text-center text-sm-left">
+              <div class="card-img pa-2 text-center">
+                <img
+                  src="images/avatar-ali.png"
+                />
+              </div>
+              <h4 class="pt-0 text-center pb-2 mt-n7">Ali Bravo</h4>
+              <v-card-text class="text-center pt-0">
+                We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused."
+              </v-card-text>
+            </v-card>
+          </div>
+          <div class="pt-5 px-3">
+            <v-card class="card mb-8 mt-md-6 text-center text-sm-left">
+              <div class="card-img pa-2 text-center">
+                <img
+                  src="images/avatar-richard.png"
+                />
+              </div>
+              <h4 class="pt-0 text-center pb-2 mt-n7">Richard Watts</h4>
+              <v-card-text class="text-center pt-0">
+                "Manage allows us to provide structure and keeps us organized and focused. I can't stop preaching them to everyone I talk to! The solution provided is superb."
+              </v-card-text>
+            </v-card>
+          </div>
+          <div class="pt-5 px-3">
+            <v-card class="card mb-8 mt-md-6 text-center text-sm-left">
+              <div class="card-img pa-2 text-center">
+                <img
+                  src="images/avatar-anisha.png"
+                />
+              </div>
+              <h4 class="pt-0 text-center pb-2 mt-n7">Anisha Li</h4>
+              <v-card-text class="text-center pt-0">
+                "Manage has supercharged our team's workflow. The team helps maintain visibility on larger milestones at all times and keeps everyone motivated."
+              </v-card-text>
+            </v-card>
+          </div>
+          <div class="pt-5 px-3">
+            <v-card class="card mb-8 mt-md-6 text-center text-sm-left">
+              <div class="card-img pa-2 text-center">
+                <img
+                  src="images/avatar-shanai.png"
+                />
+              </div>
+              <h4 class="pt-0 text-center pb-2 mt-n7">Shanai Shegantan</h4>
+              <v-card-text class="text-center pt-0">
+                "Manage allows us to provide structure and keeps us organized. The team helps maintain visibility on larger milestones and keeps everyone motivated."
+              </v-card-text>
+            </v-card>
+          </div>
+        </VueSlickCarousel>
+
+        <VueSlickCarousel class="d-sm-none" v-bind="mobileSettings">
+          <div class="pt-5 px-3">
+            <v-card class="card mb-8 mt-md-6 text-center text-sm-left">
+              <div class="card-img pa-2 text-center">
+                <img
+                  src="images/avatar-ali.png"
+                />
+              </div>
+              <h4 class="pt-0 text-center pb-2 mt-n7">Ali Bravo</h4>
+              <v-card-text class="text-center pt-0">
+                We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused."
+              </v-card-text>
+            </v-card>
+          </div>
+          <div class="pt-5 px-3">
+            <v-card class="card mb-8 mt-md-6 text-center text-sm-left">
+              <div class="card-img pa-2 text-center">
+                <img
+                  src="images/avatar-richard.png"
+                />
+              </div>
+              <h4 class="pt-0 text-center pb-2 mt-n7">Richard Watts</h4>
+              <v-card-text class="text-center pt-0">
+                "Manage allows us to provide structure and keeps us organized and focused. I can't stop preaching them to everyone I talk to! The solution provided is superb."
+              </v-card-text>
+            </v-card>
+          </div>
+          <div class="pt-5 px-3">
+            <v-card class="card mb-8 mt-md-6 text-center text-sm-left">
+              <div class="card-img pa-2 text-center">
+                <img
+                  src="images/avatar-anisha.png"
+                />
+              </div>
+              <h4 class="pt-0 text-center pb-2 mt-n7">Anisha Li</h4>
+              <v-card-text class="text-center pt-0">
+                "Manage has supercharged our team's workflow. The team helps maintain visibility on larger milestones at all times and keeps everyone motivated."
+              </v-card-text>
+            </v-card>
+          </div>
+          <div class="pt-5 px-3">
+            <v-card class="card mb-8 mt-md-6 text-center text-sm-left">
+              <div class="card-img pa-2 text-center">
+                <img
+                  src="images/avatar-shanai.png"
+                />
+              </div>
+              <h4 class="pt-0 text-center pb-2 mt-n7">Shanai Shegantan</h4>
+              <v-card-text class="text-center pt-0">
+                "Manage allows us to provide structure and keeps us organized. The team helps maintain visibility on larger milestones and keeps everyone motivated."
+              </v-card-text>
+            </v-card>
+          </div>
+        </VueSlickCarousel>
+
+        <div class="d-flex justify-center mt-12 mt-sm-5">
+          <v-btn rounded color="hsl(12, 88%, 59%)" class="white--text text-capitalize">Get Started</v-btn>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default Vue.extend({
-  name: 'Home'
+  name: 'Home',
+  components: {
+    VueSlickCarousel
+  },
+  data: () => ({
+    settings: {
+      arrows: false as boolean,
+      dots: false as boolean,
+      infinite: true as boolean,
+      speed: 3700 as number,
+      slidesToShow: 3 as number,
+      slidesToScroll: 1 as number,
+      autoplay: true as boolean,
+      autoplaySpeed: 3700 as number,
+      cssEase: 'linear' as string
+      // "touchThreshold": 5
+    },
+    mobileSettings: {
+      arrows: false as boolean,
+      dots: true as boolean,
+      infinite: true as boolean,
+      speed: 3700 as number,
+      slidesToShow: 1 as number,
+      slidesToScroll: 1 as number,
+      autoplay: true as boolean,
+      autoplaySpeed: 3700 as number,
+      cssEase: 'linear' as string,
+      // "touchThreshold": 5
+      dotsClass: 'slick-dots' as string,
+      edgeFriction: 0.35 as number
+    }
+  })
 })
 </script>
 
@@ -121,6 +276,16 @@ export default Vue.extend({
   .mobile-bg {
     background-color: rgba(242, 95, 98, 0.3);
     border-radius: 14px 0px 0px 14px;
+  }
+}
+
+.card {
+  background: var(--clr-very-light-gray) !important;
+  .card-img {
+    transform: translateY(-28px);
+    img {
+      width: 3.3rem;
+    }
   }
 }
 </style>
