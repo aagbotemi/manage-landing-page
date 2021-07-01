@@ -275,7 +275,7 @@
         </v-row>
 
         <div class="text-right mt-10 mt-md-3">
-          <span >Copyright 2021. All Rights Reserved.</span>
+          <span >Copyright {{ copyrightYear }}. All Rights Reserved.</span>
         </div>
       </v-container>
     </footer>
@@ -332,22 +332,18 @@ export default Vue.extend({
     }
   }),
   methods: {
-    /* validate () {
-      this.$refs.form.validate()
-    }, */
     reset () {
       this.$refs.form.reset()
     },
-    /* resetValidation () {
-
-    }, */
     submitEmail () {
-      // this.$refs.form.reset()
-      /* this.$refs.form.resetValidation(); */
       this.reset()
       alert('Email submitted successfully!')
-
       this.email = ''
+    }
+  },
+  computed: {
+    copyrightYear () {
+      return new Date().getFullYear()
     }
   }
 })
